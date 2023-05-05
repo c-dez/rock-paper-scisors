@@ -8,7 +8,7 @@ let playerChose;
 // playerChose= prompt(ppt);
 
 //hardcode testing
-var playerTest = 'papel';
+var playerTest = 'tijeras';
 var pcTest = 'piedra';
 
 
@@ -21,7 +21,7 @@ function pcChose(){
 return ( ppt[Math.floor(Math.random() * ppt.length)]);
 }
 //player and pc have selected, now compare resuts
-console.log(`${playerTest} + ${pcTest}`);
+// console.log(`${playerTest} + ${pcTest}`);
 var resultTest = [playerTest, pcTest];
 
 //resultados t true, F false, D draw
@@ -32,17 +32,40 @@ var resultTest = [playerTest, pcTest];
 
 //compare and return resuts
 //compara playerChose y pcChose y asigna valor true o flase o draw
-function checkResults(playerTest, pcTest){
+function checkWin(){
     if(resultTest.toString()=== 'papel,piedra'){
-        console.log('T');
+        console.log('papel piedra');
         return true;
-    }else if(resultTest.toString()=== 'papel,tijeras'){
-        console.log('F');
+    }
+    else if(resultTest.toString()=== 'tijeras,papel'){
+        // console.log('tijeras papel');
+        return true;
+      
         
+    }else if(resultTest.toString()=== 'piedra,tijeras'){
+        return true;
     }
     
 }
-console.log(checkResults());
+
+function checkLost(){
+    if(resultTest.toString()=== 'tijeras,piedra'){
+        // console.log('papel piedra');
+        return false;
+    }
+    else if(resultTest.toString()=== 'papel,tijeras'){
+        // console.log('tijeras papel');
+        return false;
+      
+        
+    }else if(resultTest.toString()=== 'piedra,papel'){
+        return false;
+    }
+    
+}
+console.log(checkWin() +' checkWin');
+console.log('You lose '+checkLost());
+
 
     
 
