@@ -4,12 +4,12 @@ var pcChose;
 pcChose = pcChose();
 //player choses a variable
 //save that variable in  let playerChose 
-let playerChose;
+// let playerChose;
 // playerChose= prompt(ppt);
 
 //hardcode testing
-var playerTest = 'tijeras';
-var pcTest = 'piedra';
+var playerChose = 'tijeras';
+// var pcChose = 'piedra';
 
 
 
@@ -21,8 +21,8 @@ function pcChose(){
 return ( ppt[Math.floor(Math.random() * ppt.length)]);
 }
 //player and pc have selected, now compare resuts
-// console.log(`${playerTest} + ${pcTest}`);
-var resultTest = [playerTest, pcTest];
+console.log(`${playerChose} + ${pcChose}`);
+var resultTest = [playerChose, pcChose];
 
 //resultados t true, F false, D draw
 //papel, papel D  tijeras F,  piedra T
@@ -63,8 +63,18 @@ function checkLost(){
     }
     
 }
-console.log(checkWin() +' checkWin');
-console.log('You lose '+checkLost());
+// console.log(checkWin() +' checkWin');
+// console.log('You lose '+checkLost());
+
+function didIWon(){
+    if (checkWin()==true){
+        console.log('you Won!');
+    }else if(checkLost()==false){
+        console.log('you lost!');
+    }else
+    console.log('DRAW!');
+}
+console.log(didIWon());
 
 
     
