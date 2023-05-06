@@ -4,11 +4,12 @@ var pcChose;
 pcChose = pcChose();
 //player choses a variable
 //save that variable in  let playerChose 
-// let playerChose;
-// playerChose= prompt(ppt);
+
+let playerChose;//player tiene que elegir una opcion, pero por testing la puse en random
+playerChose= ppt[Math.floor(Math.random() * ppt.length)];
 
 //hardcode testing
-var playerChose = 'tijeras';
+// var playerChose = 'tijeras';
 // var pcChose = 'piedra';
 
 
@@ -21,7 +22,7 @@ function pcChose(){
 return ( ppt[Math.floor(Math.random() * ppt.length)]);
 }
 //player and pc have selected, now compare resuts
-console.log(`${playerChose} + ${pcChose}`);
+// console.log(`${playerChose} + ${pcChose}`);
 var resultTest = [playerChose, pcChose];
 
 //resultados t true, F false, D draw
@@ -34,7 +35,7 @@ var resultTest = [playerChose, pcChose];
 //compara playerChose y pcChose y asigna valor true o flase o draw
 function checkWin(){
     if(resultTest.toString()=== 'papel,piedra'){
-        console.log('papel piedra');
+        // console.log('papel piedra');
         return true;
     }
     else if(resultTest.toString()=== 'tijeras,papel'){
@@ -65,19 +66,33 @@ function checkLost(){
 }
 // console.log(checkWin() +' checkWin');
 // console.log('You lose '+checkLost());
-
+var playerScore = 0;
 function didIWon(){
     if (checkWin()==true){
         console.log('you Won!');
+        console.log(`${playerChose} Beats ${pcChose}`);
+         playerScore++;
+        //  return playerScore;
     }else if(checkLost()==false){
         console.log('you lost!');
+        console.log(`${pcChose} Beats ${playerChose}`);
     }else
     console.log('DRAW!');
 }
 console.log(didIWon());
 
+//al ganador a;adir un punto SCORE 
+
+  
+
 
     
+
+
+
+// terminar ronda
+//repetir ronda  
+//repetir 5 veces  
 
 
 
