@@ -1,3 +1,5 @@
+// let playerSelection='paper';
+// let computerSelection= getComSelection();
 
 function getComSelection(){
     const ppt = ['rock', 'paper', 'scissors'];
@@ -12,22 +14,32 @@ function getPlayerSelection(){
     return ppt[randomNumb];
 
 }
-function compareResults(){
-    let player = getPlayerSelection();
-    let computer= getComSelection();
-    if((player ==='rock' && computer === 'scissors') ||
-    (player ==='paper' && computer === 'rock')||
-    (player ==='scissors' && computer === 'paper')){
-       return console.log(`win ${player} ${computer}`)
-    }else if(player===computer){
-       return console.log(`tie ${player} ${computer}`)
+
+function playRound(playerSelection, computerSelection){
+    
+    if((playerSelection == 'rock' && computerSelection =='scissors')||
+    (playerSelection == 'paper' && computerSelection =='rock')||
+    (playerSelection == 'scissors' && computerSelection =='paper')){
+        return `you win ${playerSelection} beats ${computerSelection}`;
+   
+    }else if(playerSelection==computerSelection){
+        return `its a tie ${playerSelection} and ${computerSelection}`;
 
     }else{
-       return console.log(`lose ${player} ${computer}`)
+        return `you lose ${computerSelection} beats ${playerSelection}`
     }
 }
-// console.log(compareResults())
-    compareResults()
+// console.log(playRound(playerSelection, computerSelection));
+
+function game(){
+    for(i =0; i<5; i++){
+        let playerSelection= getPlayerSelection();
+        let computerSelection= getComSelection();
+        console.log(playRound(playerSelection, computerSelection));
+    }
+}
+game();
+
 
 
 
