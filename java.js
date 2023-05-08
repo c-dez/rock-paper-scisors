@@ -1,19 +1,34 @@
-const ppt = ['piedra', 'papel', 'tijeras'];
-let playerCho =  ppt[Math.floor(Math.random() *ppt.length)]
-let pcCho =  ppt[Math.floor(Math.random() *ppt.length)]
 
-function gameStart(){
-    if((playerCho == 'papel' && playerCho == 'piedra')||
-    (playerCho == 'piedra' && playerCho == 'tijeras')||
-    (playerCho == 'tijeras' && playerCho == 'papel')){
-        return 'win';
+function getComSelection(){
+    const ppt = ['rock', 'paper', 'scissors'];
+    let randomNumb = Math.floor(Math.random()*3);
+    return ppt[randomNumb];
 
-    }else if (playerCho === pcCho){
-        return 'tie';
+}
+
+function getPlayerSelection(){
+    const ppt = ['rock', 'paper', 'scissors'];
+    let randomNumb = Math.floor(Math.random()*3);
+    return ppt[randomNumb];
+
+}
+function compareResults(){
+    let player = getPlayerSelection();
+    let computer= getComSelection();
+    if((player ==='rock' && computer === 'scissors') ||
+    (player ==='paper' && computer === 'rock')||
+    (player ==='scissors' && computer === 'paper')){
+       return console.log(`win ${player} ${computer}`)
+    }else if(player===computer){
+       return console.log(`tie ${player} ${computer}`)
+
     }else{
-        return 'lose';
+       return console.log(`lose ${player} ${computer}`)
     }
 }
-console.log(gameStart()+' ' + playerCho +' '+ pcCho);
+// console.log(compareResults())
+    compareResults()
+
+
 
 
