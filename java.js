@@ -1,99 +1,19 @@
-//create 3 variables for rock paper scisors
-let ppt=['piedra', 'papel', 'tijeras'];
-var pcChose;
-pcChose = pcChose();
-//player choses a variable
-//save that variable in  let playerChose 
+const ppt = ['piedra', 'papel', 'tijeras'];
+let playerCho =  ppt[Math.floor(Math.random() *ppt.length)]
+let pcCho =  ppt[Math.floor(Math.random() *ppt.length)]
 
-let playerChose;//player tiene que elegir una opcion, pero por testing la puse en random
-playerChose= ppt[Math.floor(Math.random() * ppt.length)];
+function gameStart(){
+    if((playerCho == 'papel' && playerCho == 'piedra')||
+    (playerCho == 'piedra' && playerCho == 'tijeras')||
+    (playerCho == 'tijeras' && playerCho == 'papel')){
+        return 'win';
 
-//hardcode testing
-// var playerChose = 'tijeras';
-// var pcChose = 'piedra';
-
-
-
-
-//funcion  multiplica el length  *  numero al azar, despues lo redondea hacia abajo
-//this function choses rock, paper or scisors for the PC ta random
-//returns string
-function pcChose(){
-return ( ppt[Math.floor(Math.random() * ppt.length)]);
-}
-//player and pc have selected, now compare resuts
-// console.log(`${playerChose} + ${pcChose}`);
-var resultTest = [playerChose, pcChose];
-
-//resultados t true, F false, D draw
-//papel, papel D  tijeras F,  piedra T
-//tijeras  papel T, tijeras D piedra F
-//piedra  papel F, tijeras T,  piedra D
-
-
-//compare and return resuts
-//compara playerChose y pcChose y asigna valor true o flase o draw
-function checkWin(){
-    if(resultTest.toString()=== 'papel,piedra'){
-        // console.log('papel piedra');
-        return true;
+    }else if (playerCho === pcCho){
+        return 'tie';
+    }else{
+        return 'lose';
     }
-    else if(resultTest.toString()=== 'tijeras,papel'){
-        // console.log('tijeras papel');
-        return true;
-      
-        
-    }else if(resultTest.toString()=== 'piedra,tijeras'){
-        return true;
-    }
-    
 }
-
-function checkLost(){
-    if(resultTest.toString()=== 'tijeras,piedra'){
-        // console.log('papel piedra');
-        return false;
-    }
-    else if(resultTest.toString()=== 'papel,tijeras'){
-        // console.log('tijeras papel');
-        return false;
-      
-        
-    }else if(resultTest.toString()=== 'piedra,papel'){
-        return false;
-    }
-    
-}
-// console.log(checkWin() +' checkWin');
-// console.log('You lose '+checkLost());
-var playerScore = 0;
-function didIWon(){
-    if (checkWin()==true){
-        console.log('you Won!');
-        console.log(`${playerChose} Beats ${pcChose}`);
-         playerScore++;
-        //  return playerScore;
-    }else if(checkLost()==false){
-        console.log('you lost!');
-        console.log(`${pcChose} Beats ${playerChose}`);
-    }else
-    console.log('DRAW!');
-}
-console.log(didIWon());
-
-//al ganador a;adir un punto SCORE 
-
-  
-
-
-    
-
-
-
-// terminar ronda
-//repetir ronda  
-//repetir 5 veces  
-
-
+console.log(gameStart()+' ' + playerCho +' '+ pcCho);
 
 
