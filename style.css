@@ -1,7 +1,10 @@
-/* .btn{
+.btnRock{
     background-color: pink;
+    height: 50px;
+    width: 100px;
+    border: 3px solid purple;
 
-} */
+}
 
 #results>h2{
     display: flex;
@@ -19,4 +22,12 @@
     display: flex;
     justify-content: center;
     gap: 10%;
+}
+
+.resultsText{
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
 }
