@@ -1,0 +1,22 @@
+/* .btn{
+    background-color: pink;
+
+} */
+
+#results>h2{
+    display: flex;
+    border: 5px solid pink;
+    justify-content: center;
+}
+
+
+#results>.scoreBoard{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#container{
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
