@@ -25,16 +25,17 @@ function playRound(playerSelection, computerSelection){
     if((playerSelection == 'Rock' && computerSelection =='Scissors')||
     (playerSelection == 'Paper' && computerSelection =='Rock')||
     (playerSelection == 'Scissors' && computerSelection =='Paper')){
-        playerScore++;
-        rounds++;
+        playerScore +=1;
+        rounds +=1;
         return `you win ${playerSelection} beats ${computerSelection}`;
    
     }else if(playerSelection==computerSelection){
+        rounds +=1;
         return `its a tie ${playerSelection} and ${computerSelection}`;
-
+        
     }else{
-        computerScore++;
-        rounds++;
+        computerScore +=1;
+        rounds +=1;
         return `you lose ${playerSelection} lose to ${computerSelection}`
     }
 }
@@ -72,9 +73,9 @@ const scorePlayer = document.querySelector('.playerScore');
     // `Player Score: ${playerScore}`)
 
 function fiveRounds(rounds){
-    if(rounds>= 5 && playerScore>computerScore){
+    if(rounds== 5 && playerScore>computerScore){
         alert('You win');
-    }else if(rounds>=5 && computerScore>playerScore){
+    }else if(rounds==5 && computerScore>playerScore){
     alert('you lose')
     }
 }
